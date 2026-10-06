@@ -2,7 +2,7 @@
 
 <?php
 
-
+$rand1 = rand(1,6); // Genera un número aleatorio entre 1 y 6
 
 ?>
 
@@ -11,14 +11,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lanzamiento de Dado</title>
 </head>
 <body>
-
-
-
-
-
     
+<a href="Lanzamientodado.php">Lanzar dado</a>
+
 </body>
 </html>
