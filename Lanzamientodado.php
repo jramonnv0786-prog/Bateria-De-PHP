@@ -17,6 +17,5 @@ $_GET["número"] = $rand1;
 <a href="Lanzamientodado.php">Lanzar dado</a>
 <img src="php.1<?php echo $_GET['número']; ?>.png" alt="Dado" width="100" height="100">
 
-
 </body>
 </html>
