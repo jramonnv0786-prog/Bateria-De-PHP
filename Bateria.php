@@ -1,6 +1,5 @@
 /*
  * BateriaPHP - Un framework PHP ligero y rápido
- * 
  * Este archivo es parte del framework BateriaPHP y contiene un ejemplo 
  * de cómo recibir parámetros a través de la URL.
  */

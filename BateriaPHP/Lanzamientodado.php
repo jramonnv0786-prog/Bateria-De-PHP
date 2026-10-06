@@ -1,9 +1,7 @@
 /* Ejercicio 1 lanzamiento de dado */
-
 <?php
-
 $rand1 = rand(1,6); // Genera un número aleatorio entre 1 y 6
-
+$_GET["número"] = $rand1;
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +12,7 @@ $rand1 = rand(1,6); // Genera un número aleatorio entre 1 y 6
     <title>Lanzamiento de Dado</title>
 </head>
 <body>
-    
+
 <a href="Lanzamientodado.php">Lanzar dado</a>
 
 </body>
