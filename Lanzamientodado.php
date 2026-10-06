@@ -1,5 +1,4 @@
 /* Ejercicio 1 lanzamiento de dado */
-
 <?php
 $rand1 = rand(1,6); // Genera un número aleatorio entre 1 y 6
 $_GET["número"] = $rand1;
