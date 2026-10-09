@@ -1,5 +1,3 @@
-
-
 <?php
 $nombre = $_GET['nombre']; // Variable de tipo string
 $edad = $_GET['años']; // Variable de tipo integer
