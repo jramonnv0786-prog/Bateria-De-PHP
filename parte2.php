@@ -1,4 +1,3 @@
-
 <?php
 //Mostrar el resultado de cada lanzamiento y el total de lanzamientos realizados.
 
