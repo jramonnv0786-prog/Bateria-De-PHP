@@ -1,8 +1,9 @@
 <?php
-/* Ejercicio 1 lanzamiento de dado */
+// Ejercicio 1 lanzamiento de dado
 
 if (isset($_GET['lanzar'])) { // Verifica si se ha presionado el botón de lanzar
-    $resultado = rand(1,6); // Genera un número aleatorio entre 1 y 6
+// Genera un número aleatorio entre 1 y 6
+    $resultado = rand(1,6); 
 }
 ?>
 <!DOCTYPE html>
@@ -13,15 +14,16 @@ if (isset($_GET['lanzar'])) { // Verifica si se ha presionado el botón de lanza
 </head>
 <body>
 <form method = "get">
-    <button type="submit" name="lanzar">Lanzar dado</button> // Botón para lanzar el dado
+    <!-- Botón para lanzar el dado -->
+    <button type="submit" name="lanzar">Lanzar dado</button> 
 </form>
 
 <?php 
 // Verifica si se ha generado un resultado
 if (isset($resultado)) { ?> 
-    // Muestra el resultado del lanzamiento
+    <!-- Muestra el resultado del lanzamiento -->
     <p>Has sacado un <?php echo $resultado; ?></p> 
-    // Muestra la imagen correspondiente al resultado
+    <!-- Muestra la imagen correspondiente al resultado -->
     <img src="Image/php.<?php echo $resultado; ?>.JPG" alt="Dado <?php echo $resultado; ?>" width="100" height="100"> 
 <?php } ?>
 
