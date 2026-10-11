@@ -19,7 +19,7 @@ if (isset($_GET['lanzar'])) { // Verifica si se ha presionado el botón de lanza
 <?php 
 // Verifica si se ha generado un resultado
 if (isset($resultado)) { ?> 
-// Muestra el resultado del lanzamiento
+    // Muestra el resultado del lanzamiento
     <p>Has sacado un <?php echo $resultado; ?></p> 
     // Muestra la imagen correspondiente al resultado
     <img src="Image/php.<?php echo $resultado; ?>.JPG" alt="Dado <?php echo $resultado; ?>" width="100" height="100"> 

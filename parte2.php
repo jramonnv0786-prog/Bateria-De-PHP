@@ -1,10 +1,13 @@
-// Lanzamiento2_dados.php Almacenar resltados en un array 
-//Mostrar el resultado de cada lanzamiento y el total de lanzamientos realizados.
 
 <?php
+//Mostrar el resultado de cada lanzamiento y el total de lanzamientos realizados.
 
-if (isset($_GET['lanzar'])) { // Verifica si se ha presionado el botón de lanzar
-    $resultado = rand(1,6); // Genera un número aleatorio entre 1 y 6
+// Obtiene los resultados anteriores del array
+$tiradas = $_GET ["resultados"] ?? ''; 
+// Verifica si se ha presionado el botón de lanzar
+if (isset($_GET['lanzar'])) { 
+    // Genera un número aleatorio entre 1 y 6
+    $resultado = rand(1,6); 
 }
 ?>
 <!DOCTYPE html>
