@@ -1,20 +1,20 @@
 <?php
 // Primer desplegable: inicios de la frase
 $inicios = [
-    "Yo en tu lugar...",
-    "La verdad es que...",
-    "Tú sabes que...",
-    "No hay duda de que...",
-    "Al final..."
+    "Yo en tu lugar",
+    "La verdad es que",
+    "Tú sabes que",
+    "No hay duda de que",
+    "Al final"
 ];
 
 // Segundo desplegable: acciones
 $acciones = [
-    "siempre hay que invertir en...",
-    "lo importante es...",
-    "nunca subestimes...",
-    "yo siempre digo que...",
-    "el secreto está en..."
+    "siempre hay que invertir en",
+    "lo importante es",
+    "nunca subestimes",
+    "yo siempre digo que",
+    "el secreto está en"
 ];
 
 // Tercer desplegable: cierres absurdos
