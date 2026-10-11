@@ -11,6 +11,7 @@ if (isset($_GET['lanzar'])) {
 // Agrega el resultado al historial
     $tiradas.= $resultado;
 }
+// Convierte la cadena de resultados en un array para mostrar el historial
 $listatiradas = [];
 if ($tiradas !== '') {
     $listatiradas = str_split($tiradas);
@@ -24,9 +25,9 @@ if ($tiradas !== '') {
 </head>
 <body>
 <form method = "get">
-    // Botón para lanzar el dado
+    <!-- Botón para lanzar el dado -->
     <button type="submit" name="lanzar">Lanzar dado</button> 
-    // Hidden, caja de datos dentro del formulario y almacena los resultados
+    <!-- Hidden, caja de datos dentro del formulario y almacena los resultados -->
      <input type="hidden" name="resultados" value="<?php echo $tiradas; ?>"> 
 </form>
    
@@ -54,5 +55,7 @@ if (isset($resultado)) { ?>
         </tr>
     <?php } ?>
 </table>
+<!-- Muestra el total de lanzamientos realizados -->
+<p>Total de lanzamientos: <?php echo count($listatiradas); ?></p>
 </body>
 </html>
