@@ -1,21 +1,25 @@
+<?php
 /* Ejercicio 1 lanzamiento de dado */
 
-<?php
-$rand1 = rand(1,6); // Genera un número aleatorio entre 1 y 6
-$_GET["número"] = $rand1;
+if (isset($_GET['lanzar'])) { // Verifica si se ha presionado el botón de lanzar
+    $resultado = rand(1,6); // Genera un número aleatorio entre 1 y 6
+}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lanzamiento de Dado</title>
 </head>
 <body>
+<form method = "get">
+    <button type="submit" name="lanzar">Lanzar dado</button>
+</form>
 
-<a href="Lanzamientodado.php">Lanzar dado</a>
-<img src="php.1<?php echo $_GET['número']; ?>.png" alt="Dado" width="100" height="100">
+<?php if (isset($resultado)) { ?>
+    <p>Has sacado un <?php echo $resultado; ?></p> // Muestra el resultado del lanzamiento
+    <img src="Image/php.<?php echo $resultado; ?>.JPG" alt="Dado <?php echo $resultado; ?>" width="100" height="100">
+<?php } ?>
 
 </body>
 </html>
