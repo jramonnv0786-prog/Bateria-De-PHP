@@ -1,6 +1,7 @@
 <?php
 // Ejercicio 1 lanzamiento de dado
 
+// Mostrar el resultado de cada lanzamiento y el total de lanzamientos realizados
 if (isset($_GET['lanzar'])) { // Verifica si se ha presionado el botón de lanzar
 // Genera un número aleatorio entre 1 y 6
     $resultado = rand(1,6); 
