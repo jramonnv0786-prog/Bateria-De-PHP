@@ -68,14 +68,20 @@ $cierres = [
 </head>
 <body>
     <form method="get">
+        <!-- div para agrupar los elementos del primer desplegable y su input. -->
+     <div>
         <!-- Primer desplegable: inicios de la frase. -->
         <select name="Inicios">
             <?php foreach ($inicios as $inicio) { ?>
                 <option value="<?php echo $inicio; ?>" <?php if (isset($inicio_seleccionado) && $inicio_seleccionado === $inicio) echo 'selected'; ?>> <?php echo $inicio; ?> </option>
             <?php } ?>
         </select>
+        <!-- br para separar el desplegable del input. -->
+        <br>
         <!-- Input para escribir el inicio de la frase con placeholder. -->
         <input type="text" name="Inicios_Frase" placeholder="Escribe el inicio...">
+     </div>
+     <div>
         <!-- Segundo desplegable: acciones. -->
         <select name="Acciones">
             <?php 
@@ -84,8 +90,11 @@ $cierres = [
                 <option value="<?php echo $accion; ?>" <?php if (isset($accion_seleccionada) && $accion_seleccionada === $accion) echo 'selected'; ?>> <?php echo $accion; ?> </option>
             <?php } ?>
         </select>
+        <br>
         <!-- Input para escribir la acción de la frase. -->
         <input type="text" name="Acciones_Frase" placeholder="Escribe el nudo...">
+     </div>
+     <div>
         <!-- Tercer desplegable: cierres absurdos. -->
         <select name="Cierres">
             <?php 
@@ -94,8 +103,10 @@ $cierres = [
                 <option value="<?php echo $cierre; ?>" <?php if (isset($cierre_seleccionado) && $cierre_seleccionado === $cierre) echo 'selected'; ?>> <?php echo $cierre; ?> </option>
             <?php } ?>
         </select>
+        <br>
         <!-- Input para escribir el cierre de la frase. -->
         <input type="text" name="Cierres_Frase" placeholder="Escribe el cierre...">
+     </div>
          <!--Botón para generar la frase -->
         <button type="submit" name="GenerarFrase">Generar frase</button>
         <!-- Botón para generar una frase aleatoria -->
