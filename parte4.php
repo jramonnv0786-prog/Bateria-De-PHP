@@ -24,8 +24,8 @@ $cierres = [
     "los chemtrails",
     "la nube",
     "las crypto"
-];
- // Guardar el valor seleccionado del primer desplegable
+]; 
+//Guarda los valores seleccionados de los desplegables
  if (isset($_GET["Inicios"])) {
     $inicio_seleccionado = $_GET["Inicios"];
  }
@@ -34,10 +34,16 @@ $cierres = [
  }
  if (isset($_GET['Cierres'])) {
     $cierre_seleccionado = $_GET['Cierres'];
-    // Concatenar los valores seleccionados para formar la frase completa
-     $frasecompleta = $inicio_seleccionado . $accion_seleccionada . $cierre_seleccionado . '.'; 
-     $frasealeatoria = $inicios[array_rand($inicios)] . $acciones[array_rand($acciones)] . $cierres[array_rand($cierres)] . '.';
+    
+ }
+     // Concatenar los valores seleccionados para formar la frase completa
+ if (isset($_GET['GenerarFrase'])) {
+    $frasecompleta = $inicio_seleccionado . $accion_seleccionada . $cierre_seleccionado . '.'; 
+ }
 
+ // Generar una frase aleatoria
+ if (isset($_GET['GenerarFraseAleatoria'])) {
+    $frasecompleta = $inicios[array_rand($inicios)] . $acciones[array_rand($acciones)] . $cierres[array_rand($cierres)] . '.';
  }
 ?>
 
@@ -70,14 +76,13 @@ $cierres = [
             <?php } ?>
         </select>
          <!--Botón para generar la frase -->
-        <button type="submit" name="generar">Generar frase</button>
-        <button type="submit" name="frase aleatoria">Frase aleatoria</button>
+        <button type="submit" name="GenerarFrase">Generar frase</button>
+        <!-- Botón para generar una frase aleatoria -->
+        <button type="submit" name="GenerarFraseAleatoria">Frase aleatoria</button> 
     </form>
-    <?php if (isset($frasecompleta)) { ?>
+    <!-- Mostrar la frase completa si se ha generado -->
+    <?php if (isset($frasecompleta)) { ?> 
         <p><?php echo $frasecompleta; ?></p>
-        <?php } ?>
-    <?php if (isset($frasealeatoria)) { ?>
-        <p><?php echo $frasealeatoria; ?></p>
-    <?php } ?>
+        <?php } ?>    
 </body>
 </html>
