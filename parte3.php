@@ -25,6 +25,7 @@ $cierres = [
     "la nube",
     "las crypto"
 ];
+ // Guardar el valor seleccionado del primer desplegable
  if (isset($_GET["Inicios"])) {
     $inicio_seleccionado = $_GET["Inicios"];
  }
@@ -33,8 +34,8 @@ $cierres = [
  }
  if (isset($_GET['Cierres'])) {
     $cierre_seleccionado = $_GET['Cierres'];
-    
-     $frasecompleta = $inicio_seleccionado . $accion_seleccionada . $cierre_seleccionado . '.';
+    // Concatenar los valores seleccionados para formar la frase completa
+     $frasecompleta = $inicio_seleccionado . $accion_seleccionada . $cierre_seleccionado . '.'; 
 
  }
 ?>
