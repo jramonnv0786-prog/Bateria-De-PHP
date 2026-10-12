@@ -14,6 +14,7 @@ if (isset($_GET['lanzar'])) { // Verifica si se ha presionado el botón de lanza
     <title>Lanzamiento de Dado</title>
 </head>
 <body>
+    <!-- Formulario para lanzar el dado -->
 <form method = "get">
     <!-- Botón para lanzar el dado -->
     <button type="submit" name="lanzar">Lanzar dado</button> 
