@@ -1,5 +1,5 @@
 <?php
-// Primer desplegable: inicios de la frase
+// Primer desplegable: inicios de la frase.
 $inicios = [
     "Yo en tu lugar ",
     "La verdad es que ",
@@ -8,7 +8,7 @@ $inicios = [
     "Al final "
 ];
 
-// Segundo desplegable: acciones
+// Segundo desplegable: acciones.
 $acciones = [
     "siempre hay que invertir en ",
     "lo importante es ",
@@ -17,7 +17,7 @@ $acciones = [
     "el secreto está en "
 ];
 
-// Tercer desplegable: cierres absurdos
+// Tercer desplegable: cierres absurdos.
 $cierres = [
     "la bolsa de valores",
     "el no tener dinero congelado en el banco",
@@ -25,25 +25,36 @@ $cierres = [
     "la nube",
     "las crypto"
 ]; 
-//Guarda los valores seleccionados de los desplegables
- if (isset($_GET["Inicios"])) {
+//Guarda los valores seleccionados de los desplegables.
+ if (!empty($_GET["Inicios"])) {
     $inicio_seleccionado = $_GET["Inicios"];
  }
- if (isset($_GET['Acciones'])) {
+ if (!empty($_GET['Acciones'])) {
     $accion_seleccionada = $_GET['Acciones'];
  }
- if (isset($_GET['Cierres'])) {
+ if (!empty($_GET['Cierres'])) {
     $cierre_seleccionado = $_GET['Cierres'];
     
  }
-     // Concatenar los valores seleccionados para formar la frase completa
- if (isset($_GET['GenerarFrase'])) {
-    $frasecompleta = $inicio_seleccionado . $accion_seleccionada . $cierre_seleccionado . '.'; 
- }
-
- // Generar una frase aleatoria
+  // Generar una frase aleatoria.
  if (isset($_GET['GenerarFraseAleatoria'])) {
     $frasecompleta = $inicios[array_rand($inicios)] . $acciones[array_rand($acciones)] . $cierres[array_rand($cierres)] . '.';
+ }
+ // Guardar los valores escritos en los inputs.
+ //!empty() devuelve true si la variable tiene contenido, así solo se usa el input si el usuario ha escrito algo.
+ if (!empty($_GET['Inicios_Frase'])) {
+    $inicio_seleccionado = $_GET['Inicios_Frase'] . ' ';
+ }
+ if (!empty($_GET['Acciones_Frase'])) {
+    $accion_seleccionada = $_GET['Acciones_Frase'] . ' ';
+ }
+ if (!empty($_GET['Cierres_Frase'])) {
+    $cierre_seleccionado = $_GET['Cierres_Frase'] . '';
+ }
+
+     // Concatenar los valores seleccionados para formar la frase completa.
+ if (isset($_GET['GenerarFrase'])) {
+    $frasecompleta = $inicio_seleccionado . $accion_seleccionada . $cierre_seleccionado . '.'; 
  }
 ?>
 
@@ -57,30 +68,40 @@ $cierres = [
 </head>
 <body>
     <form method="get">
-        <!-- Primer desplegable: inicios de la frase -->
+        <!-- Primer desplegable: inicios de la frase. -->
         <select name="Inicios">
             <?php foreach ($inicios as $inicio) { ?>
                 <option value="<?php echo $inicio; ?>" <?php if (isset($inicio_seleccionado) && $inicio_seleccionado === $inicio) echo 'selected'; ?>> <?php echo $inicio; ?> </option>
             <?php } ?>
         </select>
-        <!-- Segundo desplegable: acciones -->
+        <!-- Input para escribir el inicio de la frase con placeholder. -->
+        <input type="text" name="Inicios_Frase" placeholder="Escribe el inicio...">
+        <!-- Segundo desplegable: acciones. -->
         <select name="Acciones">
-            <?php foreach ($acciones as $accion) { ?>
+            <?php 
+            // Recorrer el array de acciones y crear las opciones del desplegable.
+            foreach ($acciones as $accion) { ?>
                 <option value="<?php echo $accion; ?>" <?php if (isset($accion_seleccionada) && $accion_seleccionada === $accion) echo 'selected'; ?>> <?php echo $accion; ?> </option>
             <?php } ?>
         </select>
-        <!-- Tercer desplegable: cierres absurdos -->
+        <!-- Input para escribir la acción de la frase. -->
+        <input type="text" name="Acciones_Frase" placeholder="Escribe el nudo...">
+        <!-- Tercer desplegable: cierres absurdos. -->
         <select name="Cierres">
-            <?php foreach ($cierres as $cierre) { ?>
+            <?php 
+            // Recorrer el array de cierres y crear las opciones del desplegable.
+            foreach ($cierres as $cierre) { ?>
                 <option value="<?php echo $cierre; ?>" <?php if (isset($cierre_seleccionado) && $cierre_seleccionado === $cierre) echo 'selected'; ?>> <?php echo $cierre; ?> </option>
             <?php } ?>
         </select>
+        <!-- Input para escribir el cierre de la frase. -->
+        <input type="text" name="Cierres_Frase" placeholder="Escribe el cierre...">
          <!--Botón para generar la frase -->
         <button type="submit" name="GenerarFrase">Generar frase</button>
         <!-- Botón para generar una frase aleatoria -->
         <button type="submit" name="GenerarFraseAleatoria">Frase aleatoria</button> 
     </form>
-    <!-- Mostrar la frase completa si se ha generado -->
+    <!-- Mostrar la frase completa si se ha generado. -->
     <?php if (isset($frasecompleta)) { ?> 
         <p><?php echo $frasecompleta; ?></p>
         <?php } ?>    
