@@ -51,7 +51,7 @@ if (isset($resultado)) { ?>
     <!-- Recorre el array de tiradas y las muestra cada una en la tabla -->
     <?php foreach ($listatiradas as $i => $valor) { ?> 
         <tr>
-            <!-- Muestra el número de lanzamiento -->
+            <!-- Muestra el número de lanzamientos -->
             <td><?php echo $i + 1; ?></td>
             <td><?php echo $valor; ?></td>
         </tr>
