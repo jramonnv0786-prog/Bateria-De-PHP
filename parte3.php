@@ -28,13 +28,18 @@ $cierres = [
     "la nube",
     "las crypto"
 ];
+
  // Guardar el valor seleccionado del primer desplegable.
  if (isset($_GET["Inicios"])) {
     $inicio_seleccionado = $_GET["Inicios"];
  }
+
+ // Guardar el valor seleccionado del segundo desplegable.
  if (isset($_GET['Acciones'])) {
     $accion_seleccionada = $_GET['Acciones'];
  }
+
+ // Guardar el valor seleccionado del tercer desplegable.
  if (isset($_GET['Cierres'])) {
     $cierre_seleccionado = $_GET['Cierres'];
 
@@ -55,14 +60,19 @@ $cierres = [
 </head>
 <body>
     <form method="get">
+
+
         <!-- Primer desplegable: inicios de la frase. -->
         <select name="Inicios">
+
 
         <!-- Recorre el array de inicios y los muestra en el primer desplegable. -->
             <?php foreach ($inicios as $inicio) { ?>
                 <option value="<?php echo $inicio; ?>" <?php if (isset($inicio_seleccionado) && $inicio_seleccionado === $inicio) echo 'selected'; ?>> <?php echo $inicio; ?> </option>
             <?php } ?>
         </select>
+
+        
         <!-- Segundo desplegable: acciones. -->
         <select name="Acciones">
             <?php foreach ($acciones as $accion) { ?>
