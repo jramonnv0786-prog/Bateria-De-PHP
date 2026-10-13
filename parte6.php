@@ -22,11 +22,12 @@ $frasesinfrio = implode("", $palabras);
     <!-- Imprime la cantidad de palabras resultante de la función explode() -->
     <p><?php echo count($palabras); ?></p>
 
-    <!-- Imprime el array de palabras resultante de la función explode() -->
-<pre> <?php print_r($palabras); ?> </pre>
+<!-- Imprime el array de palabras resultante de la función explode() -->
+<!-- <pre> respeta los saltos de línea y espacios, así el print_r del array se ve ordenado. -->
+<pre> <?php print_r($palabras); ?> </pre> 
 
 <p><?php echo $frasesinfrio; ?></p>
 <!-- Imprime el string resultante de la función implode() -->
-<pre> [<?php echo $frasesinfrio; ?>] </pre>
+<pre> [<?php echo $frasesinfrio; ?>] </pre> 
 </body>
 </html>
