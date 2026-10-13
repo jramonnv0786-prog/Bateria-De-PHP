@@ -1,10 +1,18 @@
 <?php
 //Trabajando con Strings "Cachondas" OPCIÓN B.
 
+
+// Frase con la palabra "frío" repetida varias veces.
 $frase= "Hace frío mucho frío tiempo frío que frío me frío estoy frío quedando frío contigo frío";
+
+
+
 // La función explode divide el string usando como separador " frío",
 //y devuelve un array con las palabras resultantes de la separación.
 $palabras = explode(" frío", $frase);
+
+
+
 //La función implode une los elementos de un array en un string.
 $frasesinfrio = implode("", $palabras);
 
@@ -17,17 +25,22 @@ $frasesinfrio = implode("", $palabras);
     <title> Trabajando con strings "cachondas"</title>
 </head>
 <body>
-    
+
+    <!-- Imprime el string -->
     <p><?php echo $frase; ?></p>
-    <!-- Imprime la cantidad de palabras resultante de la función explode() -->
+
+
+
+    <!-- Imprime la cantidad de palabras resultante de la función explode -->
     <p><?php echo count($palabras); ?></p>
 
-<!-- Imprime el array de palabras resultante de la función explode() -->
+<!-- Imprime el array de palabras resultante de la función explode -->
 <!-- <pre> respeta los saltos de línea y espacios, así el print_r del array se ve ordenado. -->
 <pre> <?php print_r($palabras); ?> </pre> 
 
+
+<!-- Imprime el string resultante de la función implode -->
 <p><?php echo $frasesinfrio; ?></p>
-<!-- Imprime el string resultante de la función implode() -->
 <pre> [<?php echo $frasesinfrio; ?>] </pre> 
 </body>
 </html>
