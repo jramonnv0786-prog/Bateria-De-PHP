@@ -115,6 +115,6 @@ $cierres = [
     <!-- Mostrar la frase completa si se ha generado. -->
     <?php if (isset($frasecompleta)) { ?> 
         <p><?php echo $frasecompleta; ?></p>
-        <?php } ?>    
+        <?php } ?>
 </body>
 </html>
