@@ -1,4 +1,7 @@
 <?php
+//FRASES DE CUÑADO
+
+
 // Primer desplegable: inicios de la frase
 $inicios = [
     "Yo en tu lugar ",
