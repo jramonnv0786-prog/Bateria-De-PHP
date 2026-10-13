@@ -2,7 +2,7 @@
 //FRASES DE CUÑADO
 
 
-// Primer desplegable: inicios de la frase
+// Primer desplegable: inicios de la frase.
 $inicios = [
     "Yo en tu lugar ",
     "La verdad es que ",
@@ -11,7 +11,7 @@ $inicios = [
     "Al final "
 ];
 
-// Segundo desplegable: acciones
+// Segundo desplegable: acciones.
 $acciones = [
     "siempre hay que invertir en ",
     "lo importante es ",
@@ -20,7 +20,7 @@ $acciones = [
     "el secreto está en "
 ];
 
-// Tercer desplegable: cierres absurdos
+// Tercer desplegable: cierres absurdos.
 $cierres = [
     "la bolsa de valores",
     "el no tener dinero congelado en el banco",
@@ -28,7 +28,7 @@ $cierres = [
     "la nube",
     "las crypto"
 ];
- // Guardar el valor seleccionado del primer desplegable
+ // Guardar el valor seleccionado del primer desplegable.
  if (isset($_GET["Inicios"])) {
     $inicio_seleccionado = $_GET["Inicios"];
  }
@@ -37,7 +37,9 @@ $cierres = [
  }
  if (isset($_GET['Cierres'])) {
     $cierre_seleccionado = $_GET['Cierres'];
-    // Concatenar los valores seleccionados para formar la frase completa
+
+
+    // Concatenar los valores seleccionados para formar la frase completa.
      $frasecompleta = $inicio_seleccionado . $accion_seleccionada . $cierre_seleccionado . '.'; 
 
  }
@@ -53,27 +55,35 @@ $cierres = [
 </head>
 <body>
     <form method="get">
-        <!-- Primer desplegable: inicios de la frase -->
+        <!-- Primer desplegable: inicios de la frase. -->
         <select name="Inicios">
+
+        <!-- Recorre el array de inicios y los muestra en el primer desplegable. -->
             <?php foreach ($inicios as $inicio) { ?>
                 <option value="<?php echo $inicio; ?>" <?php if (isset($inicio_seleccionado) && $inicio_seleccionado === $inicio) echo 'selected'; ?>> <?php echo $inicio; ?> </option>
             <?php } ?>
         </select>
-        <!-- Segundo desplegable: acciones -->
+        <!-- Segundo desplegable: acciones. -->
         <select name="Acciones">
             <?php foreach ($acciones as $accion) { ?>
                 <option value="<?php echo $accion; ?>" <?php if (isset($accion_seleccionada) && $accion_seleccionada === $accion) echo 'selected'; ?>> <?php echo $accion; ?> </option>
             <?php } ?>
         </select>
-        <!-- Tercer desplegable: cierres absurdos -->
+
+
+        <!-- Tercer desplegable: cierres absurdos. -->
         <select name="Cierres">
             <?php foreach ($cierres as $cierre) { ?>
                 <option value="<?php echo $cierre; ?>" <?php if (isset($cierre_seleccionado) && $cierre_seleccionado === $cierre) echo 'selected'; ?>> <?php echo $cierre; ?> </option>
             <?php } ?>
         </select>
-         <!-- Botón para generar la frase -->
+
+
+         <!-- Botón para generar la frase. -->
         <button type="submit" name="generar">Generar frase</button>
     </form>
+
+    <!-- Muestra la frase completa si se ha generado. -->
     <?php if (isset($frasecompleta)) { ?>
         <p><?php echo $frasecompleta; ?></p>
     <?php } ?>
