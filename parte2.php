@@ -45,7 +45,7 @@ if (isset($resultado)) { ?>
         <th>Lanzamiento</th>
         <th>Resultado</th>
     </tr>
-    <!-- Itera sobre cada resultado y lo muestra en la tabla -->
+    <!-- Recorre el array de tiradas y las muestra cada una en la tabla -->
     <?php foreach ($listatiradas as $i => $valor) { ?> 
         <tr>
             <!-- Muestra el número de lanzamiento -->
