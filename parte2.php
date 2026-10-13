@@ -3,15 +3,23 @@
 
 // Obtiene los resultados anteriores del array
 $tiradas = $_GET ["resultados"] ?? '';
+
+
 // Verifica si se ha presionado el botón de lanzar
 if (isset($_GET['lanzar'])) {
+
+
 // Genera un número aleatorio entre 1 y 6
     $resultado = rand(1,6);
+
+
 // Agrega el resultado al historial
     $tiradas.= $resultado;
 }
 // Convierte la cadena de resultados en un array para mostrar el historial
 $listatiradas = [];
+
+// Verifica si hay resultados anteriores.
 if ($tiradas !== '') {
     $listatiradas = str_split($tiradas);
 }
@@ -26,6 +34,7 @@ if ($tiradas !== '') {
 <form method = "get">
     <!-- Botón para lanzar el dado -->
     <button type="submit" name="lanzar">Lanzar dado</button> 
+
     <!-- Hidden, caja de datos dentro del formulario y almacena los resultados -->
      <!-- Input oculto para enviar los resultados al siguiente lanzamiento -->
      <input type="hidden" name="resultados" value="<?php echo $tiradas; ?>"> 
@@ -51,13 +60,17 @@ if (isset($resultado)) { ?>
     <!-- Recorre el array de tiradas y las muestra cada una en la tabla -->
     <?php foreach ($listatiradas as $i => $valor) { ?> 
         <tr>
+
             <!-- Muestra el número de lanzamientos -->
             <td><?php echo $i + 1; ?></td>
             <td><?php echo $valor; ?></td>
+
         </tr>
     <?php } ?>
 </table>
 <!-- Muestra el total de lanzamientos realizados -->
 <p>Total de lanzamientos: <?php echo count($listatiradas); ?></p>
+
+
 </body>
 </html>
