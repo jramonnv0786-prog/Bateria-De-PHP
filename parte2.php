@@ -27,6 +27,7 @@ if ($tiradas !== '') {
     <!-- Botón para lanzar el dado -->
     <button type="submit" name="lanzar">Lanzar dado</button> 
     <!-- Hidden, caja de datos dentro del formulario y almacena los resultados -->
+     <!-- Input oculto para enviar los resultados al siguiente lanzamiento -->
      <input type="hidden" name="resultados" value="<?php echo $tiradas; ?>"> 
 </form>
    
