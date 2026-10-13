@@ -3,7 +3,7 @@
 
 $frase= "Hace frío mucho frío tiempo frío que frío me frío estoy frío quedando frío contigo frío";
 // La función explode divide el string usando como separador " frío",
-//y devuelve un array con las palabras resultantes de la división.
+//y devuelve un array con las palabras resultantes de la separación.
 $palabras = explode(" frío", $frase);
 //La función implode une los elementos de un array en un string.
 $frasesinfrio = implode("", $palabras);

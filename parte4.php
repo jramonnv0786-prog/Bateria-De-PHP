@@ -98,7 +98,6 @@ $cierres = [
         <!-- Tercer desplegable: cierres absurdos. -->
         <select name="Cierres">
             <?php 
-            // Recorrer el array de cierres y crear las opciones del desplegable.
             foreach ($cierres as $cierre) { ?>
                 <option value="<?php echo $cierre; ?>" <?php if (isset($cierre_seleccionado) && $cierre_seleccionado === $cierre) echo 'selected'; ?>> <?php echo $cierre; ?> </option>
             <?php } ?>
