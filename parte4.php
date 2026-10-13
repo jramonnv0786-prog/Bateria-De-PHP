@@ -106,9 +106,9 @@ $cierres = [
         <!-- Input para escribir el cierre de la frase. -->
         <input type="text" name="Cierres_Frase" placeholder="Escribe el cierre...">
      </div>
-         <!--Botón para generar la frase -->
+         <!-- Botón para generar la frase -->
         <button type="submit" name="GenerarFrase">Generar frase</button>
-        <!-- Botón para generar una frase aleatoria -->
+        <!-- Botón para generar una frase aleatoria. -->
         <button type="submit" name="GenerarFraseAleatoria">Frase aleatoria</button> 
     </form>
     <!-- Mostrar la frase completa si se ha generado. -->
