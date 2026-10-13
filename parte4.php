@@ -40,6 +40,8 @@ $cierres = [
  if (isset($_GET['GenerarFraseAleatoria'])) {
     $frasecompleta = $inicios[array_rand($inicios)] . $acciones[array_rand($acciones)] . $cierres[array_rand($cierres)] . '.';
  }
+
+
  // Guardar los valores escritos en los inputs.
  //!empty() devuelve true si la variable tiene contenido, así solo se usa el input si el usuario ha escrito algo.
  if (!empty($_GET['Inicios_Frase'])) {
@@ -70,31 +72,47 @@ $cierres = [
     <form method="get">
         <!-- div para agrupar los elementos del primer desplegable y su input. -->
      <div>
+
+
         <!-- Primer desplegable: inicios de la frase. -->
         <select name="Inicios">
             <?php foreach ($inicios as $inicio) { ?>
                 <option value="<?php echo $inicio; ?>" <?php if (isset($inicio_seleccionado) && $inicio_seleccionado === $inicio) echo 'selected'; ?>> <?php echo $inicio; ?> </option>
             <?php } ?>
         </select>
+
+
         <!-- br para separar el desplegable del input. -->
         <br>
+
+
         <!-- Input para escribir el inicio de la frase con placeholder. -->
         <input type="text" name="Inicios_Frase" placeholder="Escribe el inicio...">
      </div>
      <div>
+
+
+
         <!-- Segundo desplegable: acciones. -->
         <select name="Acciones">
             <?php 
+
+
+
             // Recorrer el array de acciones y crear las opciones del desplegable.
             foreach ($acciones as $accion) { ?>
                 <option value="<?php echo $accion; ?>" <?php if (isset($accion_seleccionada) && $accion_seleccionada === $accion) echo 'selected'; ?>> <?php echo $accion; ?> </option>
             <?php } ?>
         </select>
         <br>
+
+
         <!-- Input para escribir la acción de la frase. -->
         <input type="text" name="Acciones_Frase" placeholder="Escribe el nudo...">
      </div>
      <div>
+
+
         <!-- Tercer desplegable: cierres absurdos. -->
         <select name="Cierres">
             <?php 
@@ -103,14 +121,24 @@ $cierres = [
             <?php } ?>
         </select>
         <br>
+
+
+
         <!-- Input para escribir el cierre de la frase. -->
         <input type="text" name="Cierres_Frase" placeholder="Escribe el cierre...">
      </div>
+
+
+
          <!-- Botón para generar la frase -->
         <button type="submit" name="GenerarFrase">Generar frase</button>
+
+
         <!-- Botón para generar una frase aleatoria. -->
         <button type="submit" name="GenerarFraseAleatoria">Frase aleatoria</button> 
     </form>
+
+    
     <!-- Mostrar la frase completa si se ha generado. -->
     <?php if (isset($frasecompleta)) { ?> 
         <p><?php echo $frasecompleta; ?></p>
