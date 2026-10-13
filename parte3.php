@@ -71,7 +71,7 @@ $cierres = [
                 <option value="<?php echo $cierre; ?>" <?php if (isset($cierre_seleccionado) && $cierre_seleccionado === $cierre) echo 'selected'; ?>> <?php echo $cierre; ?> </option>
             <?php } ?>
         </select>
-         <!--Botón para generar la frase -->
+         <!-- Botón para generar la frase -->
         <button type="submit" name="generar">Generar frase</button>
     </form>
     <?php if (isset($frasecompleta)) { ?>
